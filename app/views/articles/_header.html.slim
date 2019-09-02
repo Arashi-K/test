@@ -1,0 +1,13 @@
+.header
+  h1
+    = link_to "Articles ", root_path(), class: "link"
+    = link_to "記事投稿 ", new_article_path(), class: "link"
+    = link_to "管理者画面 ", admin_root_path(), class: "link"
+
+javascript:
+  $(".header").css("background-color","skyblue")
+  $(".header").css("height","80px")
+  $(".header").css("padding","5px")
+  $(".header").css("margin-bottom","20px")
+
+  $(".link").css("color","white")
