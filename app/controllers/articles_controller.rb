@@ -15,12 +15,21 @@ class ArticlesController < ApplicationController
     redirect_to root_path
   end
 
+  def edit(id)
+    @article = Article.find(id)
+  end
+
+  def update(id, article)
+    Article.find(id).update(article.permit(:content))
+    redirect_to root_path
+  end
+
   def show(id)
     @article = Article.find(id)
   end
 
-  def destroy
-    Article.find(params[:id]).destroy
+  def destroy(id)
+    Article.find(id).destroy
     redirect_to root_path
   end
 end

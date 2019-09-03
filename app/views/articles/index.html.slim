@@ -1,6 +1,5 @@
-= render "header"
-
 body
+  = render "header"
   h3#title 記事一覧
 
   = render "search_form"
@@ -9,6 +8,7 @@ body
     p = a.content
     p
       = link_to "(投稿詳細)", article_path(a.id)
+      = link_to "(投稿編集)", edit_article_path(a.id)
       = link_to "(投稿削除)", article_path(a.id), method: :delete
   .page
     = paginate @articles
