@@ -1,6 +1,1 @@
-body
-  = render "header"
-  = simple_form_for @article do |f|
-    = f.input :content
-    = f.submit
-  = link_to "記事一覧に戻る", articles_path
+= render "article_form"

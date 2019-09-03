@@ -1,17 +1,12 @@
-body
-  = render "header"
-  h3#title 記事一覧
+h3#title 記事一覧
 
-  = render "search_form"
+= render "search_form"
 
-  - @articles.each do |a|
-    p = a.content
-    p
-      = link_to "(投稿詳細)", article_path(a.id)
-      = link_to "(投稿編集)", edit_article_path(a.id)
-      = link_to "(投稿削除)", article_path(a.id), method: :delete
-  .page
-    = paginate @articles
-
-javascript:
-  $(".page").css("float","left")
+- @articles.each do |a|
+  p = a.content
+  p
+    = link_to "(投稿詳細)", article_path(a.id)
+    = link_to "(投稿編集)", edit_article_path(a.id)
+    = link_to "(投稿削除)", article_path(a.id), method: :delete
+.page
+  = paginate @articles

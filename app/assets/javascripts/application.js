@@ -14,4 +14,13 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery
-//= require jquery_ujs
+$(document).on('turbolinks:load', function(){
+  $(".header").css("background-color","skyblue")
+  $(".header").css("height","50px")
+  $(".header").css("padding","5px")
+  $(".header").css("margin-bottom","20px")
+
+  $(".link").css("color","white")
+
+  $(".page").css("float","left")
+});

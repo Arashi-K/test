@@ -1,9 +1,10 @@
 class ArticlesController < ApplicationController
   PER = 5
+  permits :content
 
-  def index
+  def index(page: nil)
     @q = Article.all.order(id: "DESC").ransack(params[:q])
-    @articles = @q.result(distinct: true).page(params[:page]).per(PER)
+    @articles = @q.result(distinct: true).page(page).per(PER)
   end
 
   def new
@@ -11,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create(article)
-    Article.create(article.permit(:content))
+    Article.create(article)
     redirect_to root_path
   end
 
@@ -20,7 +21,7 @@ class ArticlesController < ApplicationController
   end
 
   def update(id, article)
-    Article.find(id).update(article.permit(:content))
+    Article.find(id).update(article)
     redirect_to root_path
   end
 
