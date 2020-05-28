@@ -61,7 +61,7 @@ gem "jquery-rails"
 gem 'slim-rails', '3.1.3'
 gem 'simple_form'
 gem 'action_args'
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.2.1'
 gem 'activeadmin'
 gem 'ransack'
 
